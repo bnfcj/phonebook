@@ -25,6 +25,7 @@ let persons = [
   },
 ];
 app.use(cors());
+app.use(express.static("dist"));
 app.use(express.json());
 app.use(morgan("tiny"));
 app.get("/api/persons", (req, res) => {
@@ -111,6 +112,6 @@ app.post("/api/persons", (req, res) => {
   persons.push(person);
   res.status(200).json(person);
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT);

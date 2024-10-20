@@ -43,4 +43,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#.Others
+test.rest
 # End of https://www.toptal.com/developers/gitignore/api/react,windows
