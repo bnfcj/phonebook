@@ -1,4 +1,3 @@
-const PORT = 3001;
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
@@ -112,4 +111,6 @@ app.post("/api/persons", (req, res) => {
   persons.push(person);
   res.status(200).json(person);
 });
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT);
