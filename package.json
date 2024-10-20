@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf dist && cd ../frontend && rm -rf dist && git add . && git commit -m uibuild && npm run build && cp -r dist ../backend"
+    "build:ui": "rm -rf dist && cd ../frontend && rm -rf dist && git add . && git commit -m uibuild && npm run build && cp -r dist ../backend",
+    "nodemon": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",

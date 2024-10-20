@@ -117,7 +117,8 @@ app.patch("/api/persons/:id", (req, res) => {
   const personId = req.params.id;
   const person = persons.find((p) => p.id === personId);
   console.log(number, personId, person);
-  if (person) res.status(200).json({ ...person, number: number });
+  person.number = number;
+  if (person) res.status(200).json({ ...person }  );
   else res.status(404).send("Unable to find the person, thought its id");
 });
 const PORT = process.env.PORT || 3001;
