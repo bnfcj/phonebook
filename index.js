@@ -112,6 +112,14 @@ app.post("/api/persons", (req, res) => {
   persons.push(person);
   res.status(200).json(person);
 });
+app.patch("/api/persons/:id", (req, res) => {
+  const { number } = req.body;
+  const personId = req.params.id;
+  const person = persons.find((p) => p.id === personId);
+  console.log(number, personId, person);
+  if (person) res.status(200).json({ ...person, number: number });
+  else res.status(404).send("Unable to find the person, thought its id");
+});
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT);
